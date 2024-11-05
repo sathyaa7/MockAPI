@@ -18,7 +18,8 @@ public class APISimple {
         );
         System.out.println("GET AS JAVA OBJECT--------");
 
-        ApiResponse apiResponse=    RestAssured.given().when().get(url).getBody().as(ApiResponse.class);
+        ApiResponse apiResponse=    RestAssured.given().when().get(url)
+                .getBody().as(ApiResponse.class);
         System.out.println("Details: "+apiResponse.getData());
         System.out.println("FirstName: "+apiResponse.getData().get(0).getFirst_name());
         System.out.println("Last Name: "+apiResponse.getData().get(0).getLast_name());
